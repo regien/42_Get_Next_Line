@@ -6,7 +6,7 @@
 /*   By: gmalpart <gmalpart@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/14 16:03:29 by gmalpart          #+#    #+#             */
-/*   Updated: 2017/12/15 15:15:19 by gmalpart         ###   ########.fr       */
+/*   Updated: 2019/01/26 22:54:33 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static t_fdstore		*look_forit(t_fdstore **fdstore, int fd)
 	t_fdstore			*idata;
 
 	idata = *fdstore;
+	if (!idata)
+		return (NULL);
 	while (idata->next)
 	{
 		if (idata->fd == fd)
@@ -117,8 +119,9 @@ int						get_next_line(const int fd, char **line)
 	}
 	if (ret < 0)
 		return (-1);
-	else if (!ret && (!((look_forit(&list, fd)->str))
-				|| !((look_forit(&list, fd)->str[0]))))
+	else if (!ret && ((look_forit(&list, fd)) == NULL || \
+				!((look_forit(&list, fd)->str)) || \
+				!((look_forit(&list, fd)->str[0]))))
 		return (0);
 	return (doit(&list, line, fd, buf));
 }

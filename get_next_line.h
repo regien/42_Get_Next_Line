@@ -6,14 +6,14 @@
 /*   By: gmalpart <gmalpart@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/26 00:48:17 by gmalpart          #+#    #+#             */
-/*   Updated: 2017/12/15 15:17:30 by gmalpart         ###   ########.fr       */
+/*   Updated: 2019/01/24 23:27:32 by gmalpart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 # define BUFF_SIZE 32
-# include "libft/includes/libft.h"
+# include "libft.h"
 # include <fcntl.h>
 
 /*
